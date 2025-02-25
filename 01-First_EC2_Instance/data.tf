@@ -13,6 +13,11 @@ data "aws_ami" "amazon_linux" {
   }
 }
 
+# SSH Public Key
+data "aws_key_pair" "operations" {
+  key_name = local.ssh_key
+}
+
 # Default VPC
 data "aws_vpc" "default" {
   default = true

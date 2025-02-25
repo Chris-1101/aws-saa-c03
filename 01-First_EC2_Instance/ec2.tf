@@ -2,17 +2,13 @@
 # █▀▀ █░░ ▄▀█ █▀ ▀█▀ █ █▀▀   █▀▀ █▀█ █▀▄▀█ █▀█ █░█ ▀█▀ █▀▀   █▀▀ █░░ █▀█ █░█ █▀▄ 
 # ██▄ █▄▄ █▀█ ▄█ ░█░ █ █▄▄   █▄▄ █▄█ █░▀░█ █▀▀ █▄█ ░█░ ██▄   █▄▄ █▄▄ █▄█ █▄█ █▄▀ 
 
-# SSH Public Key
-resource "aws_key_pair" "operations" {
-  key_name   = local.ssh_key.name
-  public_key = "${ local.ssh_key.type } ${ local.ssh_key.pub_key } ${ local.ssh_key.name }-${ local.ssh_key.date}"
-}
+# NOTE: without an IAM role granting SSM access, the ssm-agent will be unavailable
 
 # EC2 Instance
 resource "aws_instance" "saa_first_instance" {
   ami           = data.aws_ami.amazon_linux.id
   instance_type = "t2.micro"
-  key_name      = aws_key_pair.operations.key_name
+  key_name      = data.aws_key_pair.operations.key_name
 
   # Network
   subnet_id                   = data.aws_subnet.selected.id
