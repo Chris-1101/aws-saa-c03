@@ -1,0 +1,18 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "FullAccess",
+            "Effect": "Allow",
+            "Action": "*",
+            "Resource": "*"
+        },
+        {
+            "Sid": "DenyS3",
+            "Effect": "Deny",
+            "Action": "s3:*",
+            "Resource": "*"
+        }
+    ]
+}
+
