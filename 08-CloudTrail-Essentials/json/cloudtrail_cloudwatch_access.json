@@ -1,0 +1,28 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AWSCloudTrailCreateLogStream",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream"
+            ],
+            "Resource": [
+                "arn:aws:logs:us-east-1:${ aws_account_id }:log-group:${ log_group_name }:log-stream:${ aws_account_id }_CloudTrail_us-east-1*",
+                "arn:aws:logs:us-east-1:${ aws_account_id }:log-group:${ log_group_name }:log-stream:${ aws_organisation_id }_*"
+            ]
+        },
+        {
+            "Sid": "AWSCloudTrailPutLogEvents",
+            "Effect": "Allow",
+            "Action": [
+                "logs:PutLogEvents"
+            ],
+            "Resource": [
+                "arn:aws:logs:us-east-1:${ aws_account_id }:log-group:${ log_group_name }:log-stream:${ aws_account_id }_CloudTrail_us-east-1*",
+                "arn:aws:logs:us-east-1:${ aws_account_id }:log-group:${ log_group_name }:log-stream:${ aws_organisation_id }_*"
+            ]
+        }
+    ]
+}
+
