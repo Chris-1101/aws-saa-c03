@@ -4,7 +4,8 @@
 
 # S3 bucket
 resource "aws_s3_bucket" "static_website" {
-  bucket = "cmb-saa-static-website"
+  bucket        = "cmb-saa-static-website"
+  force_destroy = true
 }
 
 # Disable public access block
