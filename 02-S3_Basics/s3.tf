@@ -4,20 +4,21 @@
 
 # S3 bucket
 resource "aws_s3_bucket" "koala_campaign" {
-  bucket = "cmb-saa-koala-campaign"
+  bucket        = "cmb-saa-koala-campaign"
+  force_destroy = true
 }
 
 # Disable public access block
 resource "aws_s3_bucket_public_access_block" "allow_public_access" {
   bucket = aws_s3_bucket.koala_campaign.id
 
-  block_public_acls = false
-  ignore_public_acls = false
-  block_public_policy = false
+  block_public_acls       = false
+  ignore_public_acls      = false
+  block_public_policy     = false
   restrict_public_buckets = false
 }
 
-resource "aws_s3_bucket_server_side_encryption_configuration" "example" {
+resource "aws_s3_bucket_server_side_encryption_configuration" "this" {
   bucket = aws_s3_bucket.koala_campaign.id
 
   rule {

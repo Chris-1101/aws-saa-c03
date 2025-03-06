@@ -39,8 +39,8 @@ resource "aws_s3_bucket_replication_configuration" "mrap_east_to_mrap_west" {
   depends_on = [ aws_s3_bucket_versioning.mrap_east ]
 
   rule {
-    id       = "cmb-saa-mrap-east-to-west"
-    status   = "Enabled"
+    id     = "cmb-saa-mrap-east-to-west"
+    status = "Enabled"
 
     destination {
       bucket = aws_s3_bucket.mrap_west.arn
@@ -108,8 +108,8 @@ resource "aws_s3_bucket_replication_configuration" "mrap_west_to_mrap_east" {
   depends_on = [ aws_s3_bucket_versioning.mrap_west ]
 
   rule {
-    id       = "cmb-saa-mrap-west-to-east"
-    status   = "Enabled"
+    id     = "cmb-saa-mrap-west-to-east"
+    status = "Enabled"
 
     destination {
       bucket = aws_s3_bucket.mrap_east.arn

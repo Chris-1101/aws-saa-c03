@@ -26,8 +26,8 @@ resource "aws_s3_bucket_replication_configuration" "dr" {
   depends_on = [ module.s3_source.versioning ]
 
   rule {
-    id       = "cmb-saa-src-web-dr"
-    status   = "Enabled"
+    id     = "cmb-saa-src-web-dr"
+    status = "Enabled"
 
     destination {
       bucket = module.s3_destination.bucket.arn

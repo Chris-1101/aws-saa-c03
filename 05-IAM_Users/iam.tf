@@ -4,7 +4,7 @@
 
 # IAM User Sally
 resource "aws_iam_user" "sally" {
-  name          = "Sally"
+  name = "Sally"
 }
 
 # IAM User Login Profile

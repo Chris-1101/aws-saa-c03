@@ -7,7 +7,7 @@
 # General Account
 provider "aws" {
   region  = "us-east-1"
-  profile = "saa-gen-admin"
+  profile = "saa-gen-terraform"
 }
 
 # Production Account

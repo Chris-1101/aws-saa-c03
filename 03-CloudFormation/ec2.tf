@@ -13,7 +13,7 @@ resource "aws_instance" "this" {
   # Network
   subnet_id                   = data.aws_subnet.selected.id
   associate_public_ip_address = true
-  vpc_security_group_ids      = [ aws_security_group.saa_first_instance.id ]
+  vpc_security_group_ids      = [ aws_security_group.this.id ]
 
   # Root EBS Volume
   root_block_device {
