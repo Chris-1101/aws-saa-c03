@@ -1,0 +1,17 @@
+NAME            	CIDR            	AZ  	CustomIPv6Value
+
+saa-reserved-a   	10.16.0.0/20    	A   	IPv6-00
+saa-db-a         	10.16.16.0/20   	A   	IPv6-01
+saa-app-a        	10.16.32.0/20   	A   	IPv6-02
+saa-web-a        	10.16.48.0/20   	A   	IPv6-03
+
+saa-reserved-b   	10.16.64.0/20   	B   	IPv6-04
+saa-db-b         	10.16.80.0/20   	B   	IPv6-05
+saa-app-b        	10.16.96.0/20   	B   	IPv6-06
+saa-web-b        	10.16.112.0/20  	B   	IPv6-07
+
+saa-reserved-c   	10.16.128.0/20  	C   	IPv6-08
+saa-db-c         	10.16.144.0/20  	C   	IPv6-09
+saa-app-c        	10.16.160.0/20  	C   	IPv6-0A
+saa-web-c        	10.16.176.0/20  	C   	IPv6-0B
+
