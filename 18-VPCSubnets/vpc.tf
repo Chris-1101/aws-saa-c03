@@ -55,6 +55,7 @@ resource "aws_subnet" "web_a" {
   cidr_block        = "10.16.48.0/20"
   ipv6_cidr_block   = "2600:1f10:451f:c403::/64"
 
+  map_public_ip_on_launch         = true   # Part of VPC Routing Demo
   assign_ipv6_address_on_creation = true
 
   tags = {
@@ -115,6 +116,7 @@ resource "aws_subnet" "web_b" {
   cidr_block        = "10.16.112.0/20"
   ipv6_cidr_block   = "2600:1f10:451f:c407::/64"
 
+  map_public_ip_on_launch         = true   # Part of VPC Routing Demo
   assign_ipv6_address_on_creation = true
 
   tags = {
@@ -175,6 +177,7 @@ resource "aws_subnet" "web_c" {
   cidr_block        = "10.16.176.0/20"
   ipv6_cidr_block   = "2600:1f10:451f:c40b::/64"
 
+  map_public_ip_on_launch         = true   # Part of VPC Routing Demo
   assign_ipv6_address_on_creation = true
 
   tags = {
