@@ -7,6 +7,12 @@ variable "ec2_name" {
   type        = string
 }
 
+variable "ec2_instance_type" {
+  description = "Type and size of the instance"
+  type        = string
+  default     = "t2.micro"
+}
+
 variable "ec2_key_name" {
   description = "Name of the EC2 Key Pair to assign to instance"
   type        = string
