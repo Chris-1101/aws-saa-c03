@@ -4,7 +4,7 @@
 
 # EC2 Instance
 resource "aws_instance" "this" {
-  ami                  = data.aws_ami.amazon_linux.id
+  ami                  = var.ec2_ami == "latest" ? data.aws_ami.amazon_linux.id : var.ec2_ami
   instance_type        = var.ec2_instance_type
   iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
   key_name             = var.ec2_key_name

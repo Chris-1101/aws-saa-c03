@@ -13,6 +13,12 @@ variable "ec2_instance_type" {
   default     = "t2.micro"
 }
 
+variable "ec2_ami" {
+  description = "AMI to use to launch the EC2 instance"
+  type        = string
+  default     = "latest"
+}
+
 variable "ec2_key_name" {
   description = "Name of the EC2 Key Pair to assign to instance"
   type        = string
