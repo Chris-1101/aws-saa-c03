@@ -1,0 +1,17 @@
+[
+    {
+        "name": "${ task_name }-web",
+        "image": "docker.io/acantril/containerofcats",
+        "essential": true,
+        "portMappings": [
+            {
+                "name": "${ task_name }-web-80-tcp",
+                "protocol": "tcp",
+                "containerPort": 80,
+                "hostPort": 80,
+                "appProtocol": "http"
+            }
+        ]
+    }
+]
+
