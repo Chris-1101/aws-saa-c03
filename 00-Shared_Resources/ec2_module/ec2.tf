@@ -9,6 +9,10 @@ resource "aws_instance" "this" {
   iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
   key_name             = var.ec2_key_name
 
+  # User Data
+  user_data                   = var.ec2_user_data
+  user_data_replace_on_change = false
+
   # Network
   subnet_id                   = var.subnet_id
   associate_public_ip_address = var.auto_assign_ipv4           # Auto-assign public IP

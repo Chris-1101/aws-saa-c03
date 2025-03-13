@@ -19,6 +19,12 @@ variable "ec2_ami" {
   default     = "latest"
 }
 
+variable "ec2_user_data" {
+  description = "EC2 user-data script"
+  type        = string
+  default     = null
+}
+
 variable "ec2_key_name" {
   description = "Name of the EC2 Key Pair to assign to instance"
   type        = string
