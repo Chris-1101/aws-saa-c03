@@ -1,0 +1,29 @@
+
+# █░█ ▄▀█ █▀█ █ ▄▀█ █▄▄ █░░ █▀▀ █▀ 
+# ▀▄▀ █▀█ █▀▄ █ █▀█ █▄█ █▄▄ ██▄ ▄█ 
+
+# NOTE: create a terraform.tfvars file with these defined
+#  to avoid being prompted at every plan or apply
+
+variable "rds_name" {
+  description = "Name of the RDS instance"
+  type        = string
+  default     = "saa-a4l-wordpress"
+}
+
+variable "db_name" {
+  description = "Name of the wordpress database"
+  type        = string
+}
+
+variable "db_user" {
+  description = "Name of the wordpress admin user"
+  type        = string
+}
+
+variable "db_pass" {
+  description = "Password for the wordpress admin user"
+  type        = string
+  sensitive   = true
+}
+
