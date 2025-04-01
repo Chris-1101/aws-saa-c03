@@ -213,6 +213,7 @@ resource "aws_subnet" "web_c" {
 
 # Internet Gateway
 resource "aws_internet_gateway" "this" {
+  count  = var.public ? 1 : 0
   vpc_id = aws_vpc.this.id
 
   tags = {
@@ -231,16 +232,18 @@ resource "aws_route_table" "this" {
 
 # Default IPv4 Route
 resource "aws_route" "default_ipv4" {
+  count                  = var.public ? 1 : 0
   route_table_id         = aws_route_table.this.id
   destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = aws_internet_gateway.this.id
+  gateway_id             = aws_internet_gateway.this[0].id
 }
 
 # Default IPv6 Route
 resource "aws_route" "default_ipv6" {
+  count                       = var.public ? 1 : 0
   route_table_id              = aws_route_table.this.id
   destination_ipv6_cidr_block = "::/0"
-  gateway_id                  = aws_internet_gateway.this.id
+  gateway_id                  = aws_internet_gateway.this[0].id
 }
 
 # Route Table Association for Web Subnet A

@@ -8,8 +8,13 @@ output "vpc" {
 }
 
 output "igw" {
-  value       = aws_internet_gateway.this
+  value       = length(aws_internet_gateway.this) > 0 ? one(aws_internet_gateway.this) : null
   description = "The VPC's IGW"
+}
+
+output "web_rt" {
+  value       = aws_route_table.this
+  description = "Route Table for Web Subnets"
 }
 
 output "subnet_reserved_a" {

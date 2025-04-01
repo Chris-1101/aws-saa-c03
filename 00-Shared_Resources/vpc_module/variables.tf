@@ -7,3 +7,9 @@ variable "vpc_name" {
   type        = string
 }
 
+variable "public" {
+  description = "Whether to Include Internet Gateway"
+  type        = bool
+  default     = true
+}
+
